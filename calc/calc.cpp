@@ -2,16 +2,14 @@
 #include <stdlib.h>
 #include <math.h>
 
+void initializerfunc(int &health, int &attack, int &defense, int &speed, char *argv[]); //Initializes variables
 int main(int argc, char* argv[])
 {
    //Setup variables
-   int hp=0, atk=0, def=0, spd=0, cost=0;
+   int hp=0, atk=0, def=0, spd=0, cost=0, count;
    
-   //Set variables to ruby values
-   hp = atoi(argv[1]);
-   atk = atoi(argv[2]);
-   def = atoi(argv[3]);
-   spd = atoi(argv[4]);
+   //Initializes the variables
+   initializerfunc(hp, atk, def, spd, argv);
 
    //Perform calculation
    cost = round((1+(hp/10)+(atk/5)+(def/5)+(spd/5))*10);
