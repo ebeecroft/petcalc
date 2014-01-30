@@ -3,3 +3,6 @@ C++OBJ = $(C++SRC:.cpp=.o)
 
 formula: $(C++OBJ)
 	g++ -g -o calc $(C++OBJ)
+
+clean:
+	rm C++OBJ
