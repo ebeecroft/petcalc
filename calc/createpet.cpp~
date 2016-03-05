@@ -1,4 +1,3 @@
-#include <math.h>
 int getLevel(int petStats[]);
 int getCost(int petStats[], int level);
 
@@ -15,7 +14,9 @@ int getLevel(int petStats[])
    int attack = petStats[1];
    int defense = petStats[2];
    int speed = petStats[3];
-   int level = round((((log(health*attack*defense*speed)-log(6))/log(1.04))/4)-9+10*exp(-0.089*(health+attack+defense+speed-9)));
+   int stats = health + attack + defense + speed;
+   int base = 9;
+   int level = 1 + (stats - base);
    return level;
 }
 
@@ -23,7 +24,6 @@ int getCost(int petStats[], int level)
 {
    //Calculates the pet's value
    int levelCost = 10 * level;
-   int levelCost = 0;
    int healthCost = 4 * petStats[0];
    int speedCost = 3 * petStats[3];
    int attackCost = 2 * petStats[1];
