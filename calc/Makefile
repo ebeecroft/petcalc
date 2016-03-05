@@ -5,4 +5,4 @@ formula: $(C++OBJ)
 	g++ -g -o calc $(C++OBJ)
 
 clean:
-	rm -f $(C++OBJ)
+	rm -f $(C++OBJ) calc
