@@ -15,8 +15,10 @@ int getLevel(int petStats[])
    int defense = petStats[2];
    int speed = petStats[3];
    int stats = health + attack + defense + speed;
-   int base = 9;
-   int level = 1 + (stats - base);
+   int base = 10;
+   //10 stats = lv 2, 12 stats = 3, 14 stats = 4
+   int level = 2 + (stats - base)/2; //lv 2, 2->1->3, 4->2->4, 6->3->5, 8->4->6, ++ 
+//   int level = 1 + (stats - base); //From level 2 standpoint
    return level;
 }
 
